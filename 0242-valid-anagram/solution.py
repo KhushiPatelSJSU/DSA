@@ -7,15 +7,9 @@ class Solution:
         countT = {}
 
         for i in s:
-            if i in countS:
-                countS[i] = countS[i] + 1
-            else:
-                countS[i] = 1
+            countS[i] = countS.get(i, 0) + 1
 
         for i in t:
-            if i in countT:
-                countT[i] = countT[i] + 1
-            else:
-                countT[i] = 1
+            countT[i] = countT.get(i, 0) + 1
 
         return countS == countT
